@@ -1,6 +1,7 @@
 """Exercise the installed CLI and its no-overwrite contract."""
 
 import json
+from importlib.metadata import version
 import os
 from pathlib import Path
 import subprocess
@@ -87,7 +88,7 @@ class CLITest(unittest.TestCase):
         self.assertEqual(self.run_cli("--help").returncode, 0)
         result = self.run_cli("--version")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(result.stdout.strip(), "0.1.0")
+        self.assertEqual(result.stdout.strip(), version("b123d-setup"))
 
 
 if __name__ == "__main__":

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.1 - 2026-10-06
+
 ### Fixed
 
 - Generate projects with `ocp-vscode>=4.1,<5` so the viewer works with

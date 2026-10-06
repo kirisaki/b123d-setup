@@ -91,7 +91,7 @@ uv run --extra notebook jupyter lab
 ```sh
 uv run python -m unittest discover -s tests -v
 uv build
-uvx --from ./dist/b123d_setup-0.1.0-py3-none-any.whl b123d-setup --help
+uvx --from ./dist/b123d_setup-0.1.1-py3-none-any.whl b123d-setup --help
 ```
 
 Building creates a wheel and source distribution in `dist/`.
