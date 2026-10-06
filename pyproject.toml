@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "b123d-setup"
+version = "0.1.0"
+description = "Create a uv-managed build123d CAD project"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+b123d-setup = "b123d_setup.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/b123d_setup"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/", "tests/", "pyproject.toml", "README.md"]
