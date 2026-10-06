@@ -89,5 +89,29 @@ uvx --from ./dist/b123d_setup-0.1.0-py3-none-any.whl b123d-setup --help
 ```
 
 Building creates a wheel and source distribution in `dist/`.
-The package has not been published to PyPI. Once published as `b123d-setup`,
-it can also be invoked with `uvx b123d-setup my-part`.
+After the first PyPI release, install and run it with:
+
+```sh
+uvx b123d-setup my-part --with-vscode
+```
+
+## Publishing
+
+The `publish.yml` workflow tests and builds the package on pushes to `main`
+and pull requests. Only a manual run from `main` publishes to PyPI, using
+Trusted Publishing with the GitHub environment `pypi`. No API token is needed.
+
+For the first release, register a pending publisher at
+[PyPI Publishing](https://pypi.org/manage/account/publishing/) with:
+
+| Field | Value |
+| --- | --- |
+| PyPI project name | `b123d-setup` |
+| GitHub owner | `kirisaki` |
+| Repository | `b123-setup` |
+| Workflow filename | `publish.yml` |
+| Environment | `pypi` |
+
+Then open **Actions → Build and publish to PyPI → Run workflow** and select
+`main`. Each subsequent release needs a new version in `pyproject.toml` and
+an updated `uv.lock` before running the workflow again.
