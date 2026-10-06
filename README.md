@@ -9,7 +9,7 @@ each generated project's own environment.
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
 
 ```sh
-uvx --from git+https://github.com/kirisaki/b123-setup.git b123d-setup my-part --with-vscode
+uvx b123d-setup my-part --with-vscode
 cd my-part
 uv run -m scripts.export_all
 ```
@@ -18,6 +18,12 @@ To use a local checkout, run this from the repository directory instead:
 
 ```sh
 uvx --from . b123d-setup my-part --with-vscode
+```
+
+To run directly from GitHub:
+
+```sh
+uvx --from git+https://github.com/kirisaki/b123d-setup.git b123d-setup my-part --with-vscode
 ```
 
 The generator only creates files. The first `uv run` or `uv sync` in the generated
@@ -89,11 +95,6 @@ uvx --from ./dist/b123d_setup-0.1.0-py3-none-any.whl b123d-setup --help
 ```
 
 Building creates a wheel and source distribution in `dist/`.
-After the first PyPI release, install and run it with:
-
-```sh
-uvx b123d-setup my-part --with-vscode
-```
 
 ## Publishing
 
@@ -108,7 +109,7 @@ For the first release, register a pending publisher at
 | --- | --- |
 | PyPI project name | `b123d-setup` |
 | GitHub owner | `kirisaki` |
-| Repository | `b123-setup` |
+| Repository | `b123d-setup` |
 | Workflow filename | `publish.yml` |
 | Environment | `pypi` |
 

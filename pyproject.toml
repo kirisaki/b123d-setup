@@ -11,8 +11,8 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.urls]
-Repository = "https://github.com/kirisaki/b123-setup"
-Issues = "https://github.com/kirisaki/b123-setup/issues"
+Repository = "https://github.com/kirisaki/b123d-setup"
+Issues = "https://github.com/kirisaki/b123d-setup/issues"
 
 [project.scripts]
 b123d-setup = "b123d_setup.cli:main"
