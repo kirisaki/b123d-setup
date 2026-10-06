@@ -33,6 +33,10 @@ jobs:
         run: uvx twine check --strict dist/*
       - name: Smoke test the wheel
         run: uvx --from dist/*.whl b123d-setup "$RUNNER_TEMP/cad-smoke" --with-vscode
+      - name: Check generated CAD and viewer dependencies
+        run: |
+          uv run --directory "$RUNNER_TEMP/cad-smoke" --python 3.11 python -c "from ocp_vscode import show; from parts.base_plate import base_plate; assert callable(show); assert base_plate().is_valid"
+          uv run --directory "$RUNNER_TEMP/cad-smoke" --python 3.11 -m scripts.export_all
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: distributions

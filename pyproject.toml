@@ -21,4 +21,4 @@ b123d-setup = "b123d_setup.cli:main"
 packages = ["src/b123d_setup"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/", "tests/", "pyproject.toml", "README.md"]
+include = ["src/", "tests/", "pyproject.toml", "README.md", "CHANGELOG.md"]

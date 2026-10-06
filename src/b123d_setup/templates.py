@@ -11,7 +11,7 @@ description = "A build123d CAD project"
 requires-python = ">=3.11,<3.15"
 dependencies = [
     "build123d>=0.13,<0.14",
-    "ocp-vscode>=3,<4",
+    "ocp-vscode>=4.1,<5",
 ]
 
 [project.optional-dependencies]
